@@ -1,0 +1,15 @@
+[package]
+name = "fungible-token-contract"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+evice-core = { path = "../../evice-core" }
+evice-contract-sdk = { path = "../../evice-contract-sdk" }
+wee_alloc = "0.4.5"
+serde_json = { workspace = true }
+serde = { workspace = true }
+borsh = { workspace = true }

@@ -1,0 +1,102 @@
+// evice_blockchain/RPC.PROTO
+
+syntax = "proto3";
+
+package rpc;
+
+service RpcService {
+  // Method untuk mengirim transaksi
+  rpc SubmitTransaction(TransactionRequest) returns (TransactionResponse) {}
+  rpc CreateSnapshot(CreateSnapshotRequest) returns (CreateSnapshotResponse) {}
+  rpc GetAccountInfo(AccountInfoRequest) returns (AccountInfoResponse);
+  rpc GetBlockByIndex(BlockByIndexRequest) returns (BlockByIndexResponse);
+  rpc GetL2StateRoot(L2StateRootRequest) returns (L2StateRootResponse);
+  rpc GetLatestBlocks(LatestBlocksRequest) returns (LatestBlocksResponse) {}
+  rpc GetTransactionByHash(TransactionByHashRequest) returns (TransactionByHashResponse);
+  rpc GetTransactionInclusionProof(TxInclusionRequest) returns (TxInclusionProofResponse);
+  rpc GetChainInfo(ChainInfoRequest) returns (ChainInfoResponse);
+  rpc GetChainSnapshot(ChainSnapshotRequest) returns (ChainSnapshotResponse);
+}
+
+// Pesan untuk GetAccountInfo
+message AccountInfoRequest {
+  bytes address = 1;
+  optional string block_hash = 2;
+}
+message AccountInfoResponse {
+  uint64 balance = 1;
+  uint64 nonce = 2;
+}
+
+// Pesan untuk GetBlockByIndex
+message BlockByIndexRequest {
+  // Gunakan uint64. Jika ingin "blok terakhir", klien bisa mengirim u64::MAX.
+  uint64 index = 1;
+}
+message BlockByIndexResponse {
+  // Kirim blok yang sudah diserialisasi
+  bytes block_data = 1;
+}
+
+// Pesan untuk permintaan transaksi
+message TransactionRequest {
+  // Mengirim seluruh transaksi sebagai byte yang di-serialize (misal, dengan bincode)
+  bytes transaction_data = 1;
+}
+message TransactionResponse {
+  string transaction_hash = 1;
+  // Tambahkan field error jika diperlukan
+  bool success = 2;
+  string error_message = 3;
+}
+
+message L2StateRootRequest {}
+message L2StateRootResponse {
+  bytes state_root = 1;
+}
+
+// Pesan kosong untuk permintaan snapshot
+message CreateSnapshotRequest {}
+message CreateSnapshotResponse {
+  bool success = 1;
+  string message = 2;
+}
+
+message ChainSnapshotRequest {}
+message ChainSnapshotResponse {
+  bytes snapshot_data = 1; 
+}
+
+message LatestBlocksRequest {
+  uint32 count = 1;
+}
+message LatestBlocksResponse {
+  repeated bytes blocks = 1;
+}
+
+message TransactionByHashRequest {
+  string hash_hex = 1;
+}
+message TransactionByHashResponse {
+  bytes transaction_data = 1; // Transaksi tunggal yang diserialisasi
+  optional uint64 block_height = 2; // Ketinggian blok di mana ia berada
+}
+
+message TxInclusionRequest {
+  bytes transaction_hash = 1;
+}
+
+message TxInclusionProofResponse {
+  bool found = 1;
+  uint64 block_index = 2;
+  bytes block_hash = 3;
+  bytes merkle_path = 4;
+  // Transaksi itu sendiri, untuk verifikasi di sisi klien
+  bytes transaction_data = 5;
+}
+
+message ChainInfoRequest {}
+message ChainInfoResponse {
+  uint64 height = 1;
+  bytes best_block_hash = 2;
+}

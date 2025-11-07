@@ -1,0 +1,16 @@
+[package]
+name = "bridge-contract"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+evice-contract-sdk = { path = "../../evice-contract-sdk" }
+evice-core = { path = "../../evice-core" }
+wee_alloc = "0.4.5"
+borsh = { workspace = true }
+serde = { workspace = true }
+ark-ff = { workspace = true }
+ark-bls12-377 = { workspace = true }
+
+[lib]
+crate-type = ["cdylib"]

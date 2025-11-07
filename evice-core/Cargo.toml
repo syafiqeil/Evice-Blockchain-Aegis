@@ -1,0 +1,17 @@
+[package]
+name = "evice-core"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+hex = { workspace = true }
+serde = { workspace = true }
+serde_with = { workspace = true }
+serde_bytes = { workspace = true }
+borsh = { workspace = true }
+bincode = { workspace = true }
+ark-std = { workspace = true }
+ark-ff = { workspace = true }
+ark-bls12-377 = { workspace = true }
+ark-serialize = { workspace = true }
+ark-crypto-primitives = { workspace = true }

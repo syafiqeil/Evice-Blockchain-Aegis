@@ -1,0 +1,163 @@
+[package]
+name = "evice_blockchain"
+version = "0.1.0"
+edition = "2021"
+build = "build.rs"
+
+[dependencies]
+evice-core = { path = "../evice-core" }
+
+serde = { workspace = true }
+serde_json = { workspace = true }
+serde_with = { workspace = true }
+serde_bytes = { workspace = true }
+reqwest = { workspace = true }
+rocksdb = { workspace = true }
+bincode = { workspace = true }
+hex = { workspace = true }
+sha2 = { workspace = true }
+clap = { workspace = true }
+thiserror = { workspace = true }
+merlin = { workspace = true }
+rand = { workspace = true }
+rpassword = { workspace = true }
+uuid = { workspace = true }
+chrono = { workspace = true }
+generic-array = { workspace = true }
+elliptic-curve = { workspace = true }
+blake2 = { workspace = true }
+borsh = { workspace = true } 
+zstd = { workspace = true }
+zeroize = { workspace = true }
+chacha20poly1305 = { workspace = true }
+aead = { workspace = true }
+rustls = { workspace = true }
+prost = { workspace = true }
+tonic = { workspace = true }
+tonic-prost = { workspace = true }
+tokio = { workspace = true }
+futures = { workspace = true }
+libp2p = { workspace = true }
+actix-web = { workspace = true }
+actix-web-ratelimit = { workspace = true }
+tiny_http = { workspace = true }
+async-recursion = { workspace = true }
+rayon = { workspace = true}
+pqcrypto-dilithium = { workspace = true }
+pqcrypto-traits = { workspace = true }
+schnorrkel = { workspace = true }
+log = { workspace = true }
+tracing = { workspace = true }
+tracing-log = { workspace = true }
+tracing-subscriber = { workspace = true }
+env_logger = { workspace = true }
+lazy_static = { workspace = true }
+prometheus = { workspace = true }
+tempfile = { workspace = true }
+flate2 = { workspace = true }
+hash-db = { workspace = true }
+trie-db = { workspace = true }
+trie-root = { workspace = true }
+reference-trie = { workspace = true }
+keccak-hasher = { workspace = true }
+memory-db = { workspace = true }
+merkle-cbt = { workspace = true }
+parity-db = { workspace = true }
+parity-scale-codec = { workspace = true }
+aes = { workspace = true }
+scrypt = { workspace = true }
+hmac = { workspace = true }
+sha3 = { workspace = true }
+cipher = { workspace = true }
+cbc = { workspace = true }
+blst = { workspace = true }
+ark-bls12-381 = { workspace = true }
+ark-bls12-377 = { workspace = true }
+ark-groth16 = { workspace = true }
+ark-bw6-761 = { workspace = true }
+ark-snark = { workspace = true }
+ark-ff = { workspace = true }
+ark-ec = { workspace = true }
+ark-r1cs-std = { workspace = true }
+ark-relations = { workspace = true }
+ark-serialize = { workspace = true }
+ark-std = { workspace = true }
+ark-crypto-primitives = { workspace = true }
+wasmer = { workspace = true }
+wasmparser = { workspace = true }
+wasmer-middlewares = { workspace = true }
+wasmer-engine-universal = { workspace = true }
+lru = { workspace = true }
+num_cpus = { workspace = true }
+num-bigint = { workspace = true }
+num-integer = { workspace = true }
+
+[build-dependencies]
+tonic-prost-build = { workspace = true }
+
+[dev-dependencies]
+tempfile = { workspace = true }
+
+[[bin]]
+name = "evice_blockchain"
+path = "src/main.rs"
+
+[[bin]]
+name = "create_tx"
+path = "src/bin/create_tx.rs"
+
+[[bin]]
+name = "prover"
+path = "src/bin/prover.rs"
+
+[[bin]]
+name = "create_evidence"
+path = "src/bin/create_evidence.rs"
+
+[[bin]]
+name = "create_keystore"
+path = "src/bin/create_keystore.rs"
+
+[[bin]]
+name = "generate_zk_params"
+path = "src/bin/generate_zk_params.rs"
+
+[[bin]]
+name = "sequencer"
+path = "src/bin/sequencer.rs"
+
+[[bin]]
+name = "message_signer"
+path = "src/bin/message_signer.rs"
+
+[[bin]]
+name = "aggregator"
+path = "src/bin/aggregator.rs"
+
+[[bin]]
+name = "create_poseidon_params"
+path = "src/bin/create_poseidon_params.rs"
+
+[[bin]]
+name = "wallet_generator"
+path = "src/bin/wallet_generator.rs"
+
+[[bin]]
+name = "address_calculator"
+path = "src/bin/address_calculator.rs"
+
+[[bin]]
+name = "validator-tool"
+path = "src/bin/validator_tool.rs"
+
+[[bin]]
+name = "faucet"
+path = "src/bin/faucet.rs"
+
+[[test]]
+name = "full_flow"
+path = "tests/full_flow.rs"
+
+[[test]]
+name = "slashing_test"
+path = "tests/slashing_test.rs"

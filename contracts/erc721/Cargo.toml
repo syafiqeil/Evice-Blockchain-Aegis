@@ -1,0 +1,15 @@
+[package]
+name = "erc721-contract"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+evice-core = { path = "../../evice-core" }
+evice-contract-sdk = { path = "../../evice-contract-sdk" }
+serde = { workspace = true }
+serde_json = { workspace = true }
+borsh = { workspace = true }
+wee_alloc = "0.4.5"
