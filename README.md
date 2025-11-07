@@ -4,7 +4,7 @@
 >
 > This repository serves as the full-stack **Reference Implementation** and Proof-of-Concept for an advanced L1/L2 blockchain.
 >
-> The core technologies demonstrated here—specifically the **Post-Quantum Cryptography (PQC)** module and the **ZK-Proof Aggregation** circuit—are currently being proposed to the **Web3 Foundation Grants Program**.
+> The core technologies demonstrated here specifically the **Post-Quantum Cryptography (PQC)** module and the **ZK-Proof Aggregation** circuit are currently being proposed to the **Web3 Foundation Grants Program**.
 >
 > The goal of this grant is to **extract, adapt, and deliver** these battle-tested components as modular **Substrate Pallets** (`pallet-pqc` and `pallet-zk-aggregation`) for use as *public goods* by the entire Polkadot ecosystem.
 >
@@ -67,5 +67,6 @@ A local testnet script and configuration are provided in /local_testnet (this fo
 cargo run --release --bin validator_tool -- generate-batch --num-nodes 7
 
 ### License
+
 
 This project is licensed under the Apache License 2.0. Please see the LICENSE and NOTICE files for details.
