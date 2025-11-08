@@ -14,7 +14,7 @@
 
 ## Project Overview
 
-Evice is a high-performance Layer 1 blockchain platform designed from the ground up to advance the **WASM (WebAssembly) ecosystem**. It addresses two critical, long-term problems facing the Web3 space: **scalability** and **quantum security**.
+Evice is a high-performance Layer 1 blockchain platform, achieving 600ms average block times, designed from the ground up to advance the **WASM (WebAssembly) ecosystem**. It addresses two critical, long-term problems facing the Web3 space: **scalability** and **quantum security**.
 
 Our architecture, demonstrated in this repository, is a natively integrated L1/L2 hybrid:
 
@@ -70,3 +70,4 @@ cargo run --release --bin validator_tool -- generate-batch --num-nodes 7
 
 
 This project is licensed under the Apache License 2.0. Please see the LICENSE and NOTICE files for details.
+
