@@ -16,3 +16,10 @@ tx.json
 /keystores/
 /local_testnet/
 /snapshots/
+
+# Kunci privat, sertifikat, dan file build
+*.key
+*.pem
+*.srl
+*.csr
+*.cnf
