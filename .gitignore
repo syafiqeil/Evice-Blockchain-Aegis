@@ -12,12 +12,10 @@ tx.json
 /db1/
 /db2/
 
-#Evice-Aegis
 /keystores/
 /local_testnet/
 /snapshots/
 
-# Kunci privat, sertifikat, dan file build
 *.key
 *.pem
 *.srl
