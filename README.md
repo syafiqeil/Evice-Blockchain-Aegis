@@ -65,10 +65,11 @@ cargo run --release --bin aggregator -- generate-keys --leaf-vk-path ./verifying
 A local testnet script and configuration are provided in /local_testnet (this folder is not committed to git). You must first generate validator keys using the validator-tool:
 # Generate assets for 7 local validators
 cargo run --release --bin validator_tool -- generate-batch --num-nodes 7
+```
 
-### License
-
+## License
 
 This project is licensed under the Apache License 2.0. Please see the LICENSE and NOTICE files for details.
+
 
 
