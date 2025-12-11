@@ -8,7 +8,7 @@
 >
 > The goal of this grant is to **extract, adapt, and deliver** these battle-tested components as modular **Substrate Pallets** (`pallet-pqc` and `pallet-zk-aggregation`) for use as *public goods* by the entire Polkadot ecosystem.
 >
-> This repository stands as the primary **evidence of our team's experience** and technical capability to deliver on this grant, as requested in our application feedback.
+> This repository stands as the primary **evidence of our internal experience** and technical capability to deliver on this grant, as requested in our application feedback.
 
 ---
 
@@ -70,4 +70,5 @@ cargo run --release --bin validator_tool -- generate-batch --num-nodes 7
 
 
 This project is licensed under the Apache License 2.0. Please see the LICENSE and NOTICE files for details.
+
 
