@@ -1,17 +1,5 @@
 # Evice Blockchain: A PQC & ZK-Rollup L1/L2 Reference Implementation
 
-> **NOTICE (W3F Grant Context):**
->
-> This repository serves as the full-stack **Reference Implementation** and Proof-of-Concept for an advanced L1/L2 blockchain.
->
-> The core technologies demonstrated here specifically the **Post-Quantum Cryptography (PQC)** module and the **ZK-Proof Aggregation** circuit are currently being proposed to the **Web3 Foundation Grants Program**.
->
-> The goal of this grant is to **extract, adapt, and deliver** these battle-tested components as modular **Substrate Pallets** (`pallet-pqc` and `pallet-zk-aggregation`) for use as *public goods* by the entire Polkadot ecosystem.
->
-> This repository stands as the primary **evidence of our internal experience** and technical capability to deliver on this grant, as requested in our application feedback.
-
----
-
 ## Project Overview
 
 Evice is a high-performance Layer 1 blockchain platform, achieving 600ms average block times, designed from the ground up to advance the **WASM (WebAssembly) ecosystem**. It addresses two critical, long-term problems facing the Web3 space: **scalability** and **quantum security**.
@@ -36,40 +24,9 @@ This repository demonstrates a complete, full-stack implementation written in Ru
 * **RPC API:** `evice_blockchain/src/rpc.rs`, `evice_blockchain/rpc.proto` (gRPC/Tonic)
 * **Developer Tooling:** `evice_blockchain/src/bin/*` (Faucet, Prover, Aggregator, CLI Wallet, etc.)
 
-## Building and Running
-
-(This section assumes you have Rust, cargo, and other dependencies installed.)
-
-### 1. Build the Binaries
-
-This project is a Rust workspace. Build all binaries:
-
-```bash
-cargo build --release
-
-### 2. Generate ZK & Crypto Parameters
-
-(These are one-time setup steps.)
-
-# 1. Generate Poseidon params used in ZK circuits
-cargo run --release --bin create_poseidon_params
-
-# 2. Generate L2 Batch ZK proving & verifying key
-cargo run --release --bin generate_zk_params
-
-# 3. Generate L2 Aggregation ZK proving & verifying key
-cargo run --release --bin aggregator -- generate-keys --leaf-vk-path ./verifying_key.bin --agg-pk-path ./agg_proving_key.bin --agg-vk-path ./agg_verifying_key.bin
-
-### 3. Running a Local Testnet
-
-A local testnet script and configuration are provided in /local_testnet (this folder is not committed to git). You must first generate validator keys using the validator-tool:
-# Generate assets for 7 local validators
-cargo run --release --bin validator_tool -- generate-batch --num-nodes 7
-```
-
 ## License
 
-This project is licensed under the Apache License 2.0. Please see the LICENSE and NOTICE files for details.
+This project is licensed under the Apache License 2.0. 
 
 
 
