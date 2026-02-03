@@ -402,21 +402,6 @@ impl BorshDeserialize for DoubleSignEvidence {
     }
 }
 
-#[derive(
-    BorshSerialize, BorshDeserialize, Serialize, Deserialize, Debug, Clone, Encode, Decode,
-)]
-pub struct Block {
-    pub header: BlockHeader,
-    pub transactions: Vec<Transaction>,
-    pub round: u64,
-    pub view_number: u64,
-    pub justify: QuorumCertificate,
-    #[serde(with = "serde_bytes")]
-    pub vrf_output: Vec<u8>,
-    #[serde(with = "serde_bytes")]
-    pub vrf_proof: Vec<u8>,
-}
-
 #[derive(BorshSerialize, BorshDeserialize, Serialize, Deserialize, Debug, Clone)]
 pub enum ChainMessage {
     NewTransaction(Transaction),
@@ -536,6 +521,19 @@ impl<L: std::fmt::Debug, E: std::fmt::Debug> From<Box<TrieError<L, E>>> for Bloc
     fn from(err: Box<TrieError<L, E>>) -> Self {
         BlockchainError::Trie(format!("{:?}", err))
     }
+}
+
+#[derive(BorshSerialize, BorshDeserialize, Serialize, Deserialize, Debug, Clone, Encode, Decode)]
+pub struct Block {
+    pub header: BlockHeader,
+    pub transactions: Vec<Transaction>,
+    pub round: u64,
+    pub view_number: u64,
+    pub justify: QuorumCertificate,
+    #[serde(with = "serde_bytes")]
+    pub vrf_output: Vec<u8>,
+    #[serde(with = "serde_bytes")]
+    pub vrf_proof: Vec<u8>,
 }
 
 impl Block {

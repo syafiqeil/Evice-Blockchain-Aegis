@@ -56,7 +56,10 @@ pub struct BlockTree {
 }
 
 impl BlockTree {
-    pub fn new(genesis_block: Block, processing_result_tx: mpsc::Sender<BlockProcessingResult>) -> Self {
+    pub fn new(
+        genesis_block: Block, 
+        processing_result_tx: mpsc::Sender<BlockProcessingResult>
+    ) -> Self {
         let genesis_hash = genesis_block.header.calculate_hash();
         let genesis_node = Arc::new(BlockNode {
             status: BlockNodeStatus::StateReady,

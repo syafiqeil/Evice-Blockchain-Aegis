@@ -39,6 +39,7 @@ pub mod block_tree;
 
 #[derive(Debug)]
 pub struct EviceTrieLayout;
+
 impl TrieLayout for EviceTrieLayout {
     type Hash = KeccakHasher;
     type Codec = crate::trie_codec::ProductionNodeCodec<KeccakHasher>;
